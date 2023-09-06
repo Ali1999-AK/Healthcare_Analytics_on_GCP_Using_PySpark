@@ -82,7 +82,7 @@ Our project represents a significant step forward in harnessing the power of dat
    - Hive (for data persistence)
    - Cloud Storage (for scalability)
    
-6. Analytics:
+6. Analytics[Future]:
    - Data Exploration:
      - Generate descriptive statistics
      - Visualize data distributions
