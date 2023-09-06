@@ -1,7 +1,7 @@
 # Healthcare_Analytics_on_GCP_Using_PySpark
 
 
-## Overview
+# Overview
 Our project is dedicated to efficiently managing and analyzing healthcare data, providing valuable insights into prescribing patterns, city-level healthcare statistics, and more. With a focus on the U.S. healthcare domain, our goal is to empower healthcare providers and organizations with data-driven decision-making tools.
 
 Project Objectives
