@@ -1,0 +1,1437 @@
+"04-Sep-23 20:06:55" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 20:06:55" - root -INFO -main() is started ...
+"04-Sep-23 20:06:55" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 20:07:21" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 20:07:28" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 20:07:28" - root -INFO -Spark object is validated
+"04-Sep-23 20:07:30" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:07:33" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 20:07:35" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:07:45" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 20:07:45" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 20:07:45" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 20:08:23" - root -INFO -perform_data_clean is done
+"04-Sep-23 20:08:42" - root -INFO -df_count has started
+"04-Sep-23 20:08:48" - root -INFO -10573 is the count.
+"04-Sep-23 20:08:57" - root -INFO -
+ 	            city     state_name    country_name  population  zip_counts  trx_counts  presc_counts
+ JEFFERSON HILLS   PENNSYLVANIA       ALLEGHENY       11101           3        8124            43
+       BRENTWOOD      TENNESSEE      WILLIAMSON       42783           2        8366            64
+     GIBSON CITY       ILLINOIS            FORD        3429           1        1794            12
+   TRAVERSE CITY       MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+     GRANTSVILLE  WEST VIRGINIA         CALHOUN         513           1        2324            10
+         ANAHEIM     CALIFORNIA          ORANGE      350365          16       82010           498
+         MIRAMAR        FLORIDA         BROWARD      141191           4       10627            96
+         BEDFORD       VIRGINIA         BEDFORD        7240           1        2867            18
+            SACO          MAINE            YORK       19964           1        4332            30
+          OVIEDO        FLORIDA        SEMINOLE       41860           3       10904            49
+"04-Sep-23 20:08:57" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:08:57" - root -INFO -df_count has started
+"04-Sep-23 20:09:07" - root -INFO -297469 is the count.
+"04-Sep-23 20:09:16" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 20:09:16" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:09:16" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:09:16" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 20:09:16" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:09:16" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:09:16" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 20:09:16" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 20:09:16" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:09:16" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 20:09:24" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 20:09:36" - root -INFO -Data persist Script - datapersist() is done by savng dataframe df_city_final into Hive Table...
+"04-Sep-23 20:09:44" - root -INFO -Data persist is Done ..
+"04-Sep-23 20:09:44" - root -INFO -Data persist Script - datapersist() is done by savng dataframe df_presc_final into Hive Table...
+"04-Sep-23 20:09:54" - root -INFO -Data persist is Done ..
+"04-Sep-23 20:09:54" - root -INFO -presc pipeline is completed..
+"04-Sep-23 20:19:28" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 20:19:28" - root -INFO -main() is started ...
+"04-Sep-23 20:19:28" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 20:19:46" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 20:19:52" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 20:19:52" - root -INFO -Spark object is validated
+"04-Sep-23 20:19:54" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:19:57" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 20:20:00" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:20:10" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 20:20:10" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 20:20:10" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 20:20:49" - root -INFO -perform_data_clean is done
+"04-Sep-23 20:21:10" - root -INFO -df_count has started
+"04-Sep-23 20:21:16" - root -INFO -10573 is the count.
+"04-Sep-23 20:21:25" - root -INFO -
+ 	           city    state_name    country_name  population  zip_counts  trx_counts  presc_counts
+        ANAHEIM    CALIFORNIA          ORANGE      350365          16       82010           498
+         OVIEDO       FLORIDA        SEMINOLE       41860           3       10904            49
+        SWANTON          OHIO          FULTON        3858           1        1685             8
+ NORTHUMBERLAND  PENNSYLVANIA  NORTHUMBERLAND        3607           1         597             4
+       PATERSON    NEW JERSEY         PASSAIC      145233          15       19438            87
+  LAKESIDE PARK      KENTUCKY          KENTON        2762           1         904             7
+       SHAKOPEE     MINNESOTA           SCOTT       41570           1        3827            34
+  MUSCLE SHOALS       ALABAMA         COLBERT       14575           2        9872            25
+  NEW WHITELAND       INDIANA         JOHNSON        6241           1        1994             5
+  TRAVERSE CITY      MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+"04-Sep-23 20:21:25" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:21:25" - root -INFO -df_count has started
+"04-Sep-23 20:21:34" - root -INFO -297469 is the count.
+"04-Sep-23 20:21:44" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 20:21:44" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:21:44" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:21:44" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 20:21:44" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:21:44" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:21:44" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 20:21:44" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 20:21:44" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:21:44" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 20:21:45" - root -ERROR -Error in Main method,Check the stack Trace of respective module. name 'Expection' is not defined
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 14, in extract_files
+    .save(filepath, header=headerReq, compression=compressionType)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 740, in save
+    self._jwrite.save(path)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: path hdfs://localhost:9000/user/krishnanikhilmalisetty/PrescPipeline/output/dimension_city already exists.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 79, in main
+    extract_files(df_city_final,'json',CITY_PATH,1,False,'bzip2')
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 15, in extract_files
+    except Expection as exp:
+NameError: name 'Expection' is not defined
+"04-Sep-23 20:28:35" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 20:28:35" - root -INFO -main() is started ...
+"04-Sep-23 20:28:35" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 20:28:54" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 20:29:00" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 20:29:00" - root -INFO -Spark object is validated
+"04-Sep-23 20:29:02" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:29:04" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 20:29:07" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:29:17" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 20:29:17" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 20:29:17" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 20:29:55" - root -INFO -perform_data_clean is done
+"04-Sep-23 20:30:13" - root -INFO -df_count has started
+"04-Sep-23 20:30:18" - root -INFO -10573 is the count.
+"04-Sep-23 20:30:28" - root -INFO -
+ 	            city     state_name    country_name  population  zip_counts  trx_counts  presc_counts
+ JEFFERSON HILLS   PENNSYLVANIA       ALLEGHENY       11101           3        8124            43
+       BRENTWOOD      TENNESSEE      WILLIAMSON       42783           2        8366            64
+     GIBSON CITY       ILLINOIS            FORD        3429           1        1794            12
+   TRAVERSE CITY       MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+     GRANTSVILLE  WEST VIRGINIA         CALHOUN         513           1        2324            10
+         ANAHEIM     CALIFORNIA          ORANGE      350365          16       82010           498
+         MIRAMAR        FLORIDA         BROWARD      141191           4       10627            96
+         BEDFORD       VIRGINIA         BEDFORD        7240           1        2867            18
+            SACO          MAINE            YORK       19964           1        4332            30
+          OVIEDO        FLORIDA        SEMINOLE       41860           3       10904            49
+"04-Sep-23 20:30:28" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:30:28" - root -INFO -df_count has started
+"04-Sep-23 20:30:39" - root -INFO -297469 is the count.
+"04-Sep-23 20:30:48" - root -INFO -
+ 	   presc_id      presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267  GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025     MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299063757     CARL SILVER          AZ          USA            49       11               374          4517.42           1
+ 1299063757     CARL SILVER          AZ          USA            41       11               374           279.09           1
+ 1299141827   LAWRENCE KUTZ          AZ          USA            47       11               384          1690.39           1
+ 1299193412   MICHELLE PAGE          AZ          USA            36       11               330         17514.64           1
+ 1299193412   MICHELLE PAGE          AZ          USA            50       11               570           284.49           1
+ 1299208444     ROBERT LANG          AZ          USA            36       11               330            98.06           1
+ 1299223997   EDWARD COOPER          AZ          USA            40       11               360           382.00           1
+ 1299231446      HENRY MORA          AZ          USA            49       11               366          3486.10           1
+"04-Sep-23 20:30:48" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:30:48" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:30:48" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 20:30:48" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:30:48" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:30:48" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 20:30:48" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 20:30:48" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:30:48" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 20:30:49" - root -ERROR -Error in Main method,Check the stack Trace of respective module. name 'Expection' is not defined
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 14, in extract_files
+    .save(filepath, header=headerReq, compression=compressionType)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 740, in save
+    self._jwrite.save(path)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: path hdfs://localhost:9000/user/krishnanikhilmalisetty/PrescPipeline/output/dimension_city already exists.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 79, in main
+    extract_files(df_city_final,'json',CITY_PATH,1,False,'bzip2')
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 15, in extract_files
+    except Expection as exp:
+NameError: name 'Expection' is not defined
+"04-Sep-23 20:35:50" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 20:35:50" - root -INFO -main() is started ...
+"04-Sep-23 20:35:50" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 20:36:10" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 20:36:15" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 20:36:15" - root -INFO -Spark object is validated
+"04-Sep-23 20:36:18" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:36:21" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 20:36:23" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:36:33" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 20:36:33" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 20:36:33" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 20:37:11" - root -INFO -perform_data_clean is done
+"04-Sep-23 20:37:30" - root -INFO -df_count has started
+"04-Sep-23 20:37:35" - root -INFO -10573 is the count.
+"04-Sep-23 20:37:45" - root -INFO -
+ 	           city    state_name    country_name  population  zip_counts  trx_counts  presc_counts
+        ANAHEIM    CALIFORNIA          ORANGE      350365          16       82010           498
+         OVIEDO       FLORIDA        SEMINOLE       41860           3       10904            49
+        SWANTON          OHIO          FULTON        3858           1        1685             8
+ NORTHUMBERLAND  PENNSYLVANIA  NORTHUMBERLAND        3607           1         597             4
+       PATERSON    NEW JERSEY         PASSAIC      145233          15       19438            87
+  LAKESIDE PARK      KENTUCKY          KENTON        2762           1         904             7
+       SHAKOPEE     MINNESOTA           SCOTT       41570           1        3827            34
+  MUSCLE SHOALS       ALABAMA         COLBERT       14575           2        9872            25
+  NEW WHITELAND       INDIANA         JOHNSON        6241           1        1994             5
+  TRAVERSE CITY      MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+"04-Sep-23 20:37:45" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:37:45" - root -INFO -df_count has started
+"04-Sep-23 20:37:55" - root -INFO -297469 is the count.
+"04-Sep-23 20:38:04" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 20:38:04" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:38:04" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:38:04" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 20:38:04" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:38:04" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:38:04" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 20:38:04" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 20:38:04" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:38:04" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 20:38:04" - root -ERROR -Error in Main method,Check the stack Trace of respective module. name 'Expection' is not defined
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 14, in extract_files
+    .save(filepath, header=headerReq, compression=compressionType)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 740, in save
+    self._jwrite.save(path)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: path hdfs://localhost:9000/user/krishnanikhilmalisetty/PrescPipeline/output/dimension_city already exists.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 79, in main
+    extract_files(df_city_final,'json',CITY_PATH,1,False,'bzip2')
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 15, in extract_files
+    except Expection as exp:
+NameError: name 'Expection' is not defined
+"04-Sep-23 20:41:19" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 20:41:19" - root -INFO -main() is started ...
+"04-Sep-23 20:41:19" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 20:41:39" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 20:41:45" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 20:41:45" - root -INFO -Spark object is validated
+"04-Sep-23 20:41:47" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:41:49" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 20:41:51" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:42:02" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 20:42:02" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 20:42:02" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 20:42:40" - root -INFO -perform_data_clean is done
+"04-Sep-23 20:43:00" - root -INFO -df_count has started
+"04-Sep-23 20:43:05" - root -INFO -10573 is the count.
+"04-Sep-23 20:43:14" - root -INFO -
+ 	            city     state_name    country_name  population  zip_counts  trx_counts  presc_counts
+ JEFFERSON HILLS   PENNSYLVANIA       ALLEGHENY       11101           3        8124            43
+       BRENTWOOD      TENNESSEE      WILLIAMSON       42783           2        8366            64
+     GIBSON CITY       ILLINOIS            FORD        3429           1        1794            12
+   TRAVERSE CITY       MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+     GRANTSVILLE  WEST VIRGINIA         CALHOUN         513           1        2324            10
+         ANAHEIM     CALIFORNIA          ORANGE      350365          16       82010           498
+         MIRAMAR        FLORIDA         BROWARD      141191           4       10627            96
+         BEDFORD       VIRGINIA         BEDFORD        7240           1        2867            18
+            SACO          MAINE            YORK       19964           1        4332            30
+          OVIEDO        FLORIDA        SEMINOLE       41860           3       10904            49
+"04-Sep-23 20:43:14" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:43:14" - root -INFO -df_count has started
+"04-Sep-23 20:43:24" - root -INFO -297469 is the count.
+"04-Sep-23 20:43:34" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 20:43:34" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:43:34" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:43:34" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 20:43:34" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:43:34" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:43:34" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 20:43:34" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 20:43:34" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:43:34" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 20:43:34" - root -ERROR -Error in Main method,Check the stack Trace of respective module. name 'Expection' is not defined
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 14, in extract_files
+    .save(filepath, header=headerReq, compression=compressionType)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 740, in save
+    self._jwrite.save(path)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: path hdfs://localhost:9000/user/krishnanikhilmalisetty/PrescPipeline/output/dimension_city already exists.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 79, in main
+    extract_files(df_city_final,'json',CITY_PATH,1,False,'bzip2')
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 15, in extract_files
+    except Expection as exp:
+NameError: name 'Expection' is not defined
+"04-Sep-23 20:49:33" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 20:49:33" - root -INFO -main() is started ...
+"04-Sep-23 20:49:33" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 20:49:52" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 20:49:58" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 20:49:58" - root -INFO -Spark object is validated
+"04-Sep-23 20:50:00" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:50:03" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 20:50:05" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:50:16" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 20:50:16" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 20:50:16" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 20:50:54" - root -INFO -perform_data_clean is done
+"04-Sep-23 20:51:14" - root -INFO -df_count has started
+"04-Sep-23 20:51:20" - root -INFO -10573 is the count.
+"04-Sep-23 20:51:29" - root -INFO -
+ 	           city    state_name    country_name  population  zip_counts  trx_counts  presc_counts
+        ANAHEIM    CALIFORNIA          ORANGE      350365          16       82010           498
+         OVIEDO       FLORIDA        SEMINOLE       41860           3       10904            49
+        SWANTON          OHIO          FULTON        3858           1        1685             8
+ NORTHUMBERLAND  PENNSYLVANIA  NORTHUMBERLAND        3607           1         597             4
+       PATERSON    NEW JERSEY         PASSAIC      145233          15       19438            87
+  LAKESIDE PARK      KENTUCKY          KENTON        2762           1         904             7
+       SHAKOPEE     MINNESOTA           SCOTT       41570           1        3827            34
+  MUSCLE SHOALS       ALABAMA         COLBERT       14575           2        9872            25
+  NEW WHITELAND       INDIANA         JOHNSON        6241           1        1994             5
+  TRAVERSE CITY      MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+"04-Sep-23 20:51:29" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:51:29" - root -INFO -df_count has started
+"04-Sep-23 20:51:39" - root -INFO -297469 is the count.
+"04-Sep-23 20:51:48" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 20:51:48" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:51:48" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:51:48" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 20:51:48" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:51:48" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:51:48" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 20:51:48" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 20:51:48" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:51:48" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 20:51:48" - root -ERROR -Error in Main method,Check the stack Trace of respective module. name 'Expection' is not defined
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 14, in extract_files
+    .save(filepath, header=headerReq, compression=compressionType)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 740, in save
+    self._jwrite.save(path)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: path hdfs://localhost:9000/user/krishnanikhilmalisetty/PrescPipeline/output/dimension_city already exists.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 79, in main
+    extract_files(df_city_final,'json',CITY_PATH,1,False,'bzip2')
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_extraction.py", line 15, in extract_files
+    except Expection as exp:
+NameError: name 'Expection' is not defined
+"04-Sep-23 20:56:19" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 20:56:19" - root -INFO -main() is started ...
+"04-Sep-23 20:56:19" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 20:56:39" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 20:56:45" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 20:56:45" - root -INFO -Spark object is validated
+"04-Sep-23 20:56:47" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:56:50" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 20:56:52" - root -INFO -The Load_files() method is started..
+"04-Sep-23 20:57:02" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 20:57:02" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 20:57:02" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 20:57:41" - root -INFO -perform_data_clean is done
+"04-Sep-23 20:58:00" - root -INFO -df_count has started
+"04-Sep-23 20:58:06" - root -INFO -10573 is the count.
+"04-Sep-23 20:58:16" - root -INFO -
+ 	           city    state_name    country_name  population  zip_counts  trx_counts  presc_counts
+        ANAHEIM    CALIFORNIA          ORANGE      350365          16       82010           498
+         OVIEDO       FLORIDA        SEMINOLE       41860           3       10904            49
+        SWANTON          OHIO          FULTON        3858           1        1685             8
+ NORTHUMBERLAND  PENNSYLVANIA  NORTHUMBERLAND        3607           1         597             4
+       PATERSON    NEW JERSEY         PASSAIC      145233          15       19438            87
+  LAKESIDE PARK      KENTUCKY          KENTON        2762           1         904             7
+       SHAKOPEE     MINNESOTA           SCOTT       41570           1        3827            34
+  MUSCLE SHOALS       ALABAMA         COLBERT       14575           2        9872            25
+  NEW WHITELAND       INDIANA         JOHNSON        6241           1        1994             5
+  TRAVERSE CITY      MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+"04-Sep-23 20:58:16" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:58:16" - root -INFO -df_count has started
+"04-Sep-23 20:58:25" - root -INFO -297469 is the count.
+"04-Sep-23 20:58:35" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 20:58:35" - root -INFO -DataFrame validation is done.
+"04-Sep-23 20:58:35" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:58:35" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 20:58:35" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:58:35" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 20:58:35" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 20:58:35" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 20:58:35" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 20:58:35" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 20:58:35" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 20:58:56" - root -INFO -presc pipeline is completed..
+"04-Sep-23 21:34:33" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 21:34:33" - root -INFO -main() is started ...
+"04-Sep-23 21:34:33" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 21:34:52" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 21:34:57" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 21:34:57" - root -INFO -Spark object is validated
+"04-Sep-23 21:34:59" - root -INFO -The Load_files() method is started..
+"04-Sep-23 21:35:03" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 21:35:05" - root -INFO -The Load_files() method is started..
+"04-Sep-23 21:35:15" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 21:35:15" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 21:35:15" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 21:35:54" - root -INFO -perform_data_clean is done
+"04-Sep-23 21:36:14" - root -INFO -df_count has started
+"04-Sep-23 21:36:19" - root -INFO -10573 is the count.
+"04-Sep-23 21:36:29" - root -INFO -
+ 	           city    state_name    country_name  population  zip_counts  trx_counts  presc_counts
+        ANAHEIM    CALIFORNIA          ORANGE      350365          16       82010           498
+         OVIEDO       FLORIDA        SEMINOLE       41860           3       10904            49
+        SWANTON          OHIO          FULTON        3858           1        1685             8
+ NORTHUMBERLAND  PENNSYLVANIA  NORTHUMBERLAND        3607           1         597             4
+       PATERSON    NEW JERSEY         PASSAIC      145233          15       19438            87
+  LAKESIDE PARK      KENTUCKY          KENTON        2762           1         904             7
+       SHAKOPEE     MINNESOTA           SCOTT       41570           1        3827            34
+  MUSCLE SHOALS       ALABAMA         COLBERT       14575           2        9872            25
+  NEW WHITELAND       INDIANA         JOHNSON        6241           1        1994             5
+  TRAVERSE CITY      MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+"04-Sep-23 21:36:29" - root -INFO -DataFrame validation is done.
+"04-Sep-23 21:36:29" - root -INFO -df_count has started
+"04-Sep-23 21:36:39" - root -INFO -297469 is the count.
+"04-Sep-23 21:36:48" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 21:36:48" - root -INFO -DataFrame validation is done.
+"04-Sep-23 21:36:48" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 21:36:48" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 21:36:48" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 21:36:48" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 21:36:48" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 21:36:48" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 21:36:48" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 21:36:48" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 21:36:57" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 21:37:09" - root -ERROR -Error in Main method,Check the stack Trace of respective module. Can not create the managed table('`df_city_final`'). The associated location('hdfs://localhost:9000/user/hive/warehouse/prescpipeline.db/df_city_final') already exists.
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 82, in main
+    data_persist(spark = spark, df = df_city_final ,dfName = 'df_city_final' ,partitionBy = 'date',mode='append')
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_persist.py", line 16, in data_persist
+    df.write.saveAsTable(dfName,partitionBy='delivery_date', mode = mode)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 806, in saveAsTable
+    self._jwrite.saveAsTable(name)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: Can not create the managed table('`df_city_final`'). The associated location('hdfs://localhost:9000/user/hive/warehouse/prescpipeline.db/df_city_final') already exists.
+"04-Sep-23 21:45:16" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 21:45:16" - root -INFO -main() is started ...
+"04-Sep-23 21:45:16" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 21:45:34" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 21:45:40" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 21:45:40" - root -INFO -Spark object is validated
+"04-Sep-23 21:45:42" - root -INFO -The Load_files() method is started..
+"04-Sep-23 21:45:45" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 21:45:48" - root -INFO -The Load_files() method is started..
+"04-Sep-23 21:45:57" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 21:45:57" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 21:45:57" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 21:46:36" - root -INFO -perform_data_clean is done
+"04-Sep-23 21:46:56" - root -INFO -df_count has started
+"04-Sep-23 21:47:01" - root -INFO -10573 is the count.
+"04-Sep-23 21:47:10" - root -INFO -
+ 	           city    state_name    country_name  population  zip_counts  trx_counts  presc_counts
+        ANAHEIM    CALIFORNIA          ORANGE      350365          16       82010           498
+         OVIEDO       FLORIDA        SEMINOLE       41860           3       10904            49
+        SWANTON          OHIO          FULTON        3858           1        1685             8
+ NORTHUMBERLAND  PENNSYLVANIA  NORTHUMBERLAND        3607           1         597             4
+       PATERSON    NEW JERSEY         PASSAIC      145233          15       19438            87
+  LAKESIDE PARK      KENTUCKY          KENTON        2762           1         904             7
+       SHAKOPEE     MINNESOTA           SCOTT       41570           1        3827            34
+  MUSCLE SHOALS       ALABAMA         COLBERT       14575           2        9872            25
+  NEW WHITELAND       INDIANA         JOHNSON        6241           1        1994             5
+  TRAVERSE CITY      MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+"04-Sep-23 21:47:10" - root -INFO -DataFrame validation is done.
+"04-Sep-23 21:47:10" - root -INFO -df_count has started
+"04-Sep-23 21:47:20" - root -INFO -297469 is the count.
+"04-Sep-23 21:47:30" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 21:47:30" - root -INFO -DataFrame validation is done.
+"04-Sep-23 21:47:30" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 21:47:30" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 21:47:30" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 21:47:30" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 21:47:30" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 21:47:30" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 21:47:30" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 21:47:30" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 21:47:31" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 21:47:31" - root -ERROR -Error in Main method,Check the stack Trace of respective module. Can not create the managed table('`df_city_final`'). The associated location('hdfs://localhost:9000/user/hive/warehouse/prescpipeline.db/df_city_final') already exists.
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 82, in main
+    data_persist(spark = spark, df = df_city_final ,dfName = 'df_city_final' ,partitionBy = 'date',mode='append')
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_persist.py", line 16, in data_persist
+    df.write.saveAsTable(dfName,partitionBy='delivery_date', mode = mode)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 806, in saveAsTable
+    self._jwrite.saveAsTable(name)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: Can not create the managed table('`df_city_final`'). The associated location('hdfs://localhost:9000/user/hive/warehouse/prescpipeline.db/df_city_final') already exists.
+"04-Sep-23 21:52:49" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 21:52:49" - root -INFO -main() is started ...
+"04-Sep-23 21:52:49" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 21:53:08" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 21:53:14" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 21:53:14" - root -INFO -Spark object is validated
+"04-Sep-23 21:53:16" - root -INFO -The Load_files() method is started..
+"04-Sep-23 21:53:18" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 21:53:20" - root -INFO -The Load_files() method is started..
+"04-Sep-23 21:53:31" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 21:53:31" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 21:53:31" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 21:54:09" - root -INFO -perform_data_clean is done
+"04-Sep-23 21:54:29" - root -INFO -df_count has started
+"04-Sep-23 21:54:34" - root -INFO -10573 is the count.
+"04-Sep-23 21:54:44" - root -INFO -
+ 	           city    state_name    country_name  population  zip_counts  trx_counts  presc_counts
+        ANAHEIM    CALIFORNIA          ORANGE      350365          16       82010           498
+         OVIEDO       FLORIDA        SEMINOLE       41860           3       10904            49
+        SWANTON          OHIO          FULTON        3858           1        1685             8
+ NORTHUMBERLAND  PENNSYLVANIA  NORTHUMBERLAND        3607           1         597             4
+       PATERSON    NEW JERSEY         PASSAIC      145233          15       19438            87
+  LAKESIDE PARK      KENTUCKY          KENTON        2762           1         904             7
+       SHAKOPEE     MINNESOTA           SCOTT       41570           1        3827            34
+  MUSCLE SHOALS       ALABAMA         COLBERT       14575           2        9872            25
+  NEW WHITELAND       INDIANA         JOHNSON        6241           1        1994             5
+  TRAVERSE CITY      MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+"04-Sep-23 21:54:44" - root -INFO -DataFrame validation is done.
+"04-Sep-23 21:54:44" - root -INFO -df_count has started
+"04-Sep-23 21:54:53" - root -INFO -297469 is the count.
+"04-Sep-23 21:55:03" - root -INFO -
+ 	   presc_id      presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267  GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025     MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299063757     CARL SILVER          AZ          USA            41       11               374           279.09           1
+ 1299063757     CARL SILVER          AZ          USA            49       11               374          4517.42           1
+ 1299141827   LAWRENCE KUTZ          AZ          USA            47       11               384          1690.39           1
+ 1299193412   MICHELLE PAGE          AZ          USA            50       11               570           284.49           1
+ 1299193412   MICHELLE PAGE          AZ          USA            36       11               330         17514.64           1
+ 1299208444     ROBERT LANG          AZ          USA            36       11               330            98.06           1
+ 1299223997   EDWARD COOPER          AZ          USA            40       11               360           382.00           1
+ 1299231446      HENRY MORA          AZ          USA            49       11               366          3486.10           1
+"04-Sep-23 21:55:03" - root -INFO -DataFrame validation is done.
+"04-Sep-23 21:55:03" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 21:55:03" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 21:55:04" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 21:55:04" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 21:55:04" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 21:55:04" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 21:55:04" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 21:55:04" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 21:55:04" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 21:55:04" - root -ERROR -Error in Main method,Check the stack Trace of respective module. 'str' object has no attribute 'driver'
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 85, in main
+    data_persist_sql(spark=spark,df= df_city_final,dfName='df_city_final',url="jdbc:postgresql://localhost:6432/perspipeline",driver="org.postgresql.Driver",dbtable='df_city_final',mode='append',user='sparkuser1',password='user123')
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_persist.py", line 26, in data_persist_sql
+    df.write.format("jdbc").option("url",url).option("driver".driver)\
+AttributeError: 'str' object has no attribute 'driver'
+"04-Sep-23 21:57:09" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 21:57:09" - root -INFO -main() is started ...
+"04-Sep-23 21:57:09" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 21:57:28" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 21:57:34" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 21:57:34" - root -INFO -Spark object is validated
+"04-Sep-23 21:57:36" - root -INFO -The Load_files() method is started..
+"04-Sep-23 21:57:39" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 21:57:41" - root -INFO -The Load_files() method is started..
+"04-Sep-23 21:57:51" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 21:57:51" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 21:57:51" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 21:58:29" - root -INFO -perform_data_clean is done
+"04-Sep-23 21:58:49" - root -INFO -df_count has started
+"04-Sep-23 21:58:55" - root -INFO -10573 is the count.
+"04-Sep-23 21:59:03" - root -INFO -
+ 	           city    state_name    country_name  population  zip_counts  trx_counts  presc_counts
+        ANAHEIM    CALIFORNIA          ORANGE      350365          16       82010           498
+         OVIEDO       FLORIDA        SEMINOLE       41860           3       10904            49
+        SWANTON          OHIO          FULTON        3858           1        1685             8
+ NORTHUMBERLAND  PENNSYLVANIA  NORTHUMBERLAND        3607           1         597             4
+       PATERSON    NEW JERSEY         PASSAIC      145233          15       19438            87
+  LAKESIDE PARK      KENTUCKY          KENTON        2762           1         904             7
+       SHAKOPEE     MINNESOTA           SCOTT       41570           1        3827            34
+  MUSCLE SHOALS       ALABAMA         COLBERT       14575           2        9872            25
+  NEW WHITELAND       INDIANA         JOHNSON        6241           1        1994             5
+  TRAVERSE CITY      MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+"04-Sep-23 21:59:03" - root -INFO -DataFrame validation is done.
+"04-Sep-23 21:59:03" - root -INFO -df_count has started
+"04-Sep-23 21:59:13" - root -INFO -297469 is the count.
+"04-Sep-23 21:59:23" - root -INFO -
+ 	   presc_id      presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267  GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025     MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299063757     CARL SILVER          AZ          USA            41       11               374           279.09           1
+ 1299063757     CARL SILVER          AZ          USA            49       11               374          4517.42           1
+ 1299141827   LAWRENCE KUTZ          AZ          USA            47       11               384          1690.39           1
+ 1299193412   MICHELLE PAGE          AZ          USA            50       11               570           284.49           1
+ 1299193412   MICHELLE PAGE          AZ          USA            36       11               330         17514.64           1
+ 1299208444     ROBERT LANG          AZ          USA            36       11               330            98.06           1
+ 1299223997   EDWARD COOPER          AZ          USA            40       11               360           382.00           1
+ 1299231446      HENRY MORA          AZ          USA            49       11               366          3486.10           1
+"04-Sep-23 21:59:23" - root -INFO -DataFrame validation is done.
+"04-Sep-23 21:59:23" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 21:59:23" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 21:59:23" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 21:59:23" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 21:59:23" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 21:59:23" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 21:59:23" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 21:59:23" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 21:59:23" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 21:59:23" - root -ERROR -Error in Main method,Check the stack Trace of respective module. An error occurred while calling o446.save.
+: org.postgresql.util.PSQLException: FATAL: database "perspipeline" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2665)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:147)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:273)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at org.apache.spark.sql.execution.datasources.jdbc.connection.BasicConnectionProvider.getConnection(BasicConnectionProvider.scala:49)
+	at org.apache.spark.sql.execution.datasources.jdbc.connection.ConnectionProvider$.create(ConnectionProvider.scala:77)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$createConnectionFactory$1(JdbcUtils.scala:64)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:49)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:45)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$5(SQLExecution.scala:103)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:163)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:90)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:106)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:82)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:457)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:106)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:93)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:91)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:128)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:848)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:382)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:355)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Thread.java:750)
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 85, in main
+    data_persist_sql(spark=spark,df= df_city_final,dfName='df_city_final',url="jdbc:postgresql://localhost:6432/perspipeline",driver="org.postgresql.Driver",dbtable='df_city_final',mode='append',user='sparkuser1',password='user123')
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_persist.py", line 28, in data_persist_sql
+    .option("password",password).save()
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 738, in save
+    self._jwrite.save()
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 111, in deco
+    return f(*a, **kw)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/protocol.py", line 328, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o446.save.
+: org.postgresql.util.PSQLException: FATAL: database "perspipeline" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2665)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:147)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:273)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at org.apache.spark.sql.execution.datasources.jdbc.connection.BasicConnectionProvider.getConnection(BasicConnectionProvider.scala:49)
+	at org.apache.spark.sql.execution.datasources.jdbc.connection.ConnectionProvider$.create(ConnectionProvider.scala:77)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$createConnectionFactory$1(JdbcUtils.scala:64)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:49)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:45)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$5(SQLExecution.scala:103)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:163)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:90)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:106)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:82)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:457)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:106)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:93)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:91)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:128)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:848)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:382)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:355)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Thread.java:750)
+
+"04-Sep-23 22:04:37" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 22:04:37" - root -INFO -main() is started ...
+"04-Sep-23 22:04:37" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 22:04:56" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 22:05:02" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 22:05:02" - root -INFO -Spark object is validated
+"04-Sep-23 22:05:04" - root -INFO -The Load_files() method is started..
+"04-Sep-23 22:05:06" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 22:05:08" - root -INFO -The Load_files() method is started..
+"04-Sep-23 22:05:19" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 22:05:19" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 22:05:19" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 22:05:57" - root -INFO -perform_data_clean is done
+"04-Sep-23 22:06:16" - root -INFO -df_count has started
+"04-Sep-23 22:06:21" - root -INFO -10573 is the count.
+"04-Sep-23 22:06:31" - root -INFO -
+ 	            city     state_name    country_name  population  zip_counts  trx_counts  presc_counts
+ JEFFERSON HILLS   PENNSYLVANIA       ALLEGHENY       11101           3        8124            43
+       BRENTWOOD      TENNESSEE      WILLIAMSON       42783           2        8366            64
+     GIBSON CITY       ILLINOIS            FORD        3429           1        1794            12
+   TRAVERSE CITY       MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+     GRANTSVILLE  WEST VIRGINIA         CALHOUN         513           1        2324            10
+         ANAHEIM     CALIFORNIA          ORANGE      350365          16       82010           498
+         MIRAMAR        FLORIDA         BROWARD      141191           4       10627            96
+         BEDFORD       VIRGINIA         BEDFORD        7240           1        2867            18
+            SACO          MAINE            YORK       19964           1        4332            30
+          OVIEDO        FLORIDA        SEMINOLE       41860           3       10904            49
+"04-Sep-23 22:06:31" - root -INFO -DataFrame validation is done.
+"04-Sep-23 22:06:31" - root -INFO -df_count has started
+"04-Sep-23 22:06:42" - root -INFO -297469 is the count.
+"04-Sep-23 22:06:51" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 22:06:51" - root -INFO -DataFrame validation is done.
+"04-Sep-23 22:06:51" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 22:06:51" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 22:06:51" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 22:06:51" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 22:06:51" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 22:06:51" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 22:06:51" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 22:06:51" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 22:06:51" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 22:06:51" - root -ERROR -Error in Main method,Check the stack Trace of respective module. name 'data_persist_postgre' is not defined
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 85, in main
+    data_persist_postgre(spark=spark, df=df_city_final, dfName='df_city_final', url="jdbc:postgresql://localhost:6432/prespipeline", driver="org.postgresql.Driver", dbtable='df_city_final', mode="append", user="sparkuser1", password="user123")
+NameError: name 'data_persist_postgre' is not defined
+"04-Sep-23 22:09:00" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 22:09:00" - root -INFO -main() is started ...
+"04-Sep-23 22:09:00" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 22:09:19" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 22:09:24" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 22:09:24" - root -INFO -Spark object is validated
+"04-Sep-23 22:09:27" - root -INFO -The Load_files() method is started..
+"04-Sep-23 22:09:29" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 22:09:31" - root -INFO -The Load_files() method is started..
+"04-Sep-23 22:09:42" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 22:09:42" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 22:09:42" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 22:10:20" - root -INFO -perform_data_clean is done
+"04-Sep-23 22:10:40" - root -INFO -df_count has started
+"04-Sep-23 22:10:46" - root -INFO -10573 is the count.
+"04-Sep-23 22:10:54" - root -INFO -
+ 	            city     state_name    country_name  population  zip_counts  trx_counts  presc_counts
+ JEFFERSON HILLS   PENNSYLVANIA       ALLEGHENY       11101           3        8124            43
+       BRENTWOOD      TENNESSEE      WILLIAMSON       42783           2        8366            64
+     GIBSON CITY       ILLINOIS            FORD        3429           1        1794            12
+   TRAVERSE CITY       MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+     GRANTSVILLE  WEST VIRGINIA         CALHOUN         513           1        2324            10
+         ANAHEIM     CALIFORNIA          ORANGE      350365          16       82010           498
+         MIRAMAR        FLORIDA         BROWARD      141191           4       10627            96
+         BEDFORD       VIRGINIA         BEDFORD        7240           1        2867            18
+            SACO          MAINE            YORK       19964           1        4332            30
+          OVIEDO        FLORIDA        SEMINOLE       41860           3       10904            49
+"04-Sep-23 22:10:54" - root -INFO -DataFrame validation is done.
+"04-Sep-23 22:10:54" - root -INFO -df_count has started
+"04-Sep-23 22:11:05" - root -INFO -297469 is the count.
+"04-Sep-23 22:11:14" - root -INFO -
+ 	   presc_id       presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267   GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025      MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299175774     DUNCAN TRIGG          AZ          USA            39       11               330           172.20           1
+ 1299175857  CHARLES CONNELL          AZ          USA            46       11               110           133.59           1
+ 1299179380     DONALD SMITH          AZ          USA            30       11               247           115.63           1
+ 1299233178     NIZAR RAMZAN          AZ          USA            40       11               112           135.80           1
+ 1299834084   THERESA FRIMEL          AZ          USA            30       11               330          3759.69           1
+ 1299906099     PAUL BEESTON          AZ          USA            44       11               110           387.42           1
+ 1299929380   STACY DAVIDSON          AZ          USA            39       11               396           675.79           1
+ 1308972425  AHDEV KUPPUSAMY          AZ          USA            31       11               360            62.57           1
+"04-Sep-23 22:11:14" - root -INFO -DataFrame validation is done.
+"04-Sep-23 22:11:14" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 22:11:14" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 22:11:14" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 22:11:14" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 22:11:14" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 22:11:14" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 22:11:14" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 22:11:14" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 22:11:15" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 22:11:15" - root -ERROR -Error in Main method,Check the stack Trace of respective module. An error occurred while calling o446.save.
+: org.postgresql.util.PSQLException: ERROR: permission denied for schema public
+  Position: 14
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:258)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.executeStatement(JdbcUtils.scala:1031)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.createTable(JdbcUtils.scala:917)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:80)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:45)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$5(SQLExecution.scala:103)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:163)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:90)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:106)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:82)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:457)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:106)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:93)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:91)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:128)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:848)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:382)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:355)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Thread.java:750)
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 85, in main
+    data_persist_sql(spark=spark, df=df_city_final, dfName='df_city_final', url="jdbc:postgresql://localhost:6432/prespipeline", driver="org.postgresql.Driver", dbtable='df_city_final', mode="append", user="sparkuser1", password="user123")
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_persist.py", line 28, in data_persist_sql
+    .option("password",password).save()
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 738, in save
+    self._jwrite.save()
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 111, in deco
+    return f(*a, **kw)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/protocol.py", line 328, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o446.save.
+: org.postgresql.util.PSQLException: ERROR: permission denied for schema public
+  Position: 14
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:258)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.executeStatement(JdbcUtils.scala:1031)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.createTable(JdbcUtils.scala:917)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:80)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:45)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$5(SQLExecution.scala:103)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:163)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:90)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:106)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:82)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:457)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:106)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:93)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:91)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:128)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:848)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:382)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:355)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Thread.java:750)
+
+"04-Sep-23 22:14:18" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 22:14:18" - root -INFO -main() is started ...
+"04-Sep-23 22:14:18" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 22:24:20" - root -ERROR -KeyboardInterrupt while sending command.
+Traceback (most recent call last):
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/clientserver.py", line 475, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.6/socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+KeyboardInterrupt
+"04-Sep-23 22:24:43" - root -INFO -Presc Pipeline started ..
+"04-Sep-23 22:24:43" - root -INFO -main() is started ...
+"04-Sep-23 22:24:43" - create_objects -INFO -get_spark_object() is started. The 'PROD' envn is used.
+"04-Sep-23 22:26:54" - create_objects -INFO -Spark Object is created ...
+"04-Sep-23 22:27:04" - root -INFO -Validate the spark object by printing Current - [Row(current_date()=datetime.date(2023, 9, 4))]
+"04-Sep-23 22:27:04" - root -INFO -Spark object is validated
+"04-Sep-23 22:27:07" - root -INFO -The Load_files() method is started..
+"04-Sep-23 22:27:09" - root -INFO -PrescPipeline/staging/dimension_city is loaded to the data frame
+"04-Sep-23 22:27:11" - root -INFO -The Load_files() method is started..
+"04-Sep-23 22:27:22" - root -INFO -PrescPipeline/staging/fact is loaded to the data frame
+"04-Sep-23 22:27:22" - root -INFO -perform_data_clean has started df_city
+"04-Sep-23 22:27:22" - root -INFO -perform_data_clean has started for df_fact
+"04-Sep-23 22:28:01" - root -INFO -perform_data_clean is done
+"04-Sep-23 22:28:20" - root -INFO -df_count has started
+"04-Sep-23 22:28:25" - root -INFO -10573 is the count.
+"04-Sep-23 22:28:34" - root -INFO -
+ 	           city    state_name    country_name  population  zip_counts  trx_counts  presc_counts
+        ANAHEIM    CALIFORNIA          ORANGE      350365          16       82010           498
+         OVIEDO       FLORIDA        SEMINOLE       41860           3       10904            49
+        SWANTON          OHIO          FULTON        3858           1        1685             8
+ NORTHUMBERLAND  PENNSYLVANIA  NORTHUMBERLAND        3607           1         597             4
+       PATERSON    NEW JERSEY         PASSAIC      145233          15       19438            87
+  LAKESIDE PARK      KENTUCKY          KENTON        2762           1         904             7
+       SHAKOPEE     MINNESOTA           SCOTT       41570           1        3827            34
+  MUSCLE SHOALS       ALABAMA         COLBERT       14575           2        9872            25
+  NEW WHITELAND       INDIANA         JOHNSON        6241           1        1994             5
+  TRAVERSE CITY      MICHIGAN  GRAND TRAVERSE       50522           3       32627           256
+"04-Sep-23 22:28:34" - root -INFO -DataFrame validation is done.
+"04-Sep-23 22:28:34" - root -INFO -df_count has started
+"04-Sep-23 22:28:44" - root -INFO -297469 is the count.
+"04-Sep-23 22:28:54" - root -INFO -
+ 	   presc_id      presc_name presc_state Country_name  years_of_exp  trx_cnt  total_day_supply  total_drug_cost  dense_rank
+ 2046463267  GEORGE CASSIDY          AA          USA            35       12                62            36.50           1
+ 1662759025     MARK COOMES          AA          USA            42       30               150           222.68           2
+ 1299063757     CARL SILVER          AZ          USA            41       11               374           279.09           1
+ 1299063757     CARL SILVER          AZ          USA            49       11               374          4517.42           1
+ 1299141827   LAWRENCE KUTZ          AZ          USA            47       11               384          1690.39           1
+ 1299193412   MICHELLE PAGE          AZ          USA            50       11               570           284.49           1
+ 1299193412   MICHELLE PAGE          AZ          USA            36       11               330         17514.64           1
+ 1299208444     ROBERT LANG          AZ          USA            36       11               330            98.06           1
+ 1299223997   EDWARD COOPER          AZ          USA            40       11               360           382.00           1
+ 1299231446      HENRY MORA          AZ          USA            49       11               366          3486.10           1
+"04-Sep-23 22:28:54" - root -INFO -DataFrame validation is done.
+"04-Sep-23 22:28:54" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 22:28:54" - root -INFO -	StructField(city,StringType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(state_name,StringType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(country_name,StringType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(population,IntegerType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(zip_counts,IntegerType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(trx_counts,LongType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(presc_counts,LongType,false)
+"04-Sep-23 22:28:54" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 22:28:54" - root -INFO -Schema Validation Has started ..
+"04-Sep-23 22:28:54" - root -INFO -	StructField(presc_id,StringType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(presc_name,StringType,false)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(presc_state,StringType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(Country_name,StringType,false)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(years_of_exp,IntegerType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(trx_cnt,IntegerType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(total_day_supply,IntegerType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(total_drug_cost,DoubleType,true)
+"04-Sep-23 22:28:54" - root -INFO -	StructField(dense_rank,IntegerType,false)
+"04-Sep-23 22:28:54" - root -INFO -DataFrame Schema validation is completed
+"04-Sep-23 22:28:54" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 22:28:54" - root -INFO -Extraction -extract_files is started ...
+"04-Sep-23 22:28:54" - root -ERROR -Error in Main method,Check the stack Trace of respective module. An error occurred while calling o446.save.
+: org.postgresql.util.PSQLException: ERROR: permission denied for schema public
+  Position: 14
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:258)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.executeStatement(JdbcUtils.scala:1031)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.createTable(JdbcUtils.scala:917)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:80)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:45)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$5(SQLExecution.scala:103)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:163)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:90)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:106)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:82)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:457)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:106)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:93)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:91)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:128)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:848)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:382)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:355)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Thread.java:750)
+Traceback (most recent call last):
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/run_presc_pipeline.py", line 85, in main
+    data_persist_sql(spark=spark, df=df_city_final, dfName='df_city_final', url="jdbc:postgresql://localhost:6432/prespipeline", driver="org.postgresql.Driver", dbtable='df_city_final', mode="append", user="sparkuser1", password="user123")
+  File "/home/krishnanikhilmalisetty/Prescriber_analytics_pipeline/src/main/python/bin/presc_run_data_persist.py", line 28, in data_persist_sql
+    .option("password",password).save()
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 738, in save
+    self._jwrite.save()
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/opt/spark3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 111, in deco
+    return f(*a, **kw)
+  File "/opt/spark3/python/lib/py4j-0.10.9.3-src.zip/py4j/protocol.py", line 328, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o446.save.
+: org.postgresql.util.PSQLException: ERROR: permission denied for schema public
+  Position: 14
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:322)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:308)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:284)
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:258)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.executeStatement(JdbcUtils.scala:1031)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.createTable(JdbcUtils.scala:917)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:80)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:45)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$5(SQLExecution.scala:103)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:163)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:90)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:110)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:106)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:82)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:481)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:457)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:106)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:93)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:91)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:128)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:848)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:382)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:355)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Thread.java:750)
+

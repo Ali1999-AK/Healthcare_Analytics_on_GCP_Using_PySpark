@@ -1,0 +1,6 @@
+hdfs_output_paths.ksh Started...: Sun Sep  3 01:57:42 UTC 2023
+./hdfs_output_paths.ksh: line 20: PrescPipeline/output/fact: No such file or directory
+./hdfs_output_paths.ksh: line 22: PrescPipeline/output/dimension_city: No such file or directory
+./hdfs_output_paths.ksh: line 29: [0: command not found
+./hdfs_output_paths.ksh: line 40: [0: command not found
+hdfs_output_paths.ksh is completed... : Sun Sep  3 01:57:45 UTC 2023
