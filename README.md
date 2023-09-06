@@ -1,5 +1,63 @@
 # Healthcare Data Management and Analytics
 
+[Data Sources] --> [Data Ingestion] --> [Data Preprocessing] --> [Data Transformation] --> [Data Storage] --> [Analytics]
+
+1. Data Sources:
+   - Healthcare Provider Data (1,329,329 records)
+   - City Data (5,000 cities)
+   
+2. Data Ingestion:
+   - Extract data from various sources
+   - Load data into the processing pipeline
+
+3. Data Preprocessing:
+   - Data Cleaning:
+     - Remove duplicates
+     - Handle missing values
+     - Correct data types
+   - Data Validation:
+     - Ensure data quality
+     - Validate against predefined rules
+   - Data Integration:
+     - Merge and integrate data sources
+
+4. Data Transformation:
+   - Feature Engineering:
+     - Create new features
+     - Aggregate data
+   - Data Normalization:
+     - Scale numerical data
+     - Encode categorical data
+   - Data Enrichment:
+     - Add additional relevant data
+   - Data Sampling:
+     - Extract subsets for analysis
+
+5. Data Storage:
+   - Relational Database (for structured data)
+   - Hive (for data persistence)
+   - Cloud Storage (for scalability)
+   
+6. Analytics:
+   - Data Exploration:
+     - Generate descriptive statistics
+     - Visualize data distributions
+   - Advanced Analytics:
+     - Predictive Modeling
+     - Machine Learning Algorithms
+   - Interactive Dashboards:
+     - Create user-friendly interfaces
+     - Enable ad-hoc queries
+   - Reporting:
+     - Generate healthcare provider reports
+     - Generate city-level reports
+     - Monitor key metrics
+
+[End Result] --> [Informed Healthcare Decisions]
+
+
+
+
 ## Overview
 
 Our project is dedicated to efficiently managing and analyzing healthcare data, providing valuable insights into prescribing patterns, city-level healthcare statistics, and more. With a focus on the U.S. healthcare domain, our goal is to empower healthcare providers and organizations with data-driven decision-making tools.
